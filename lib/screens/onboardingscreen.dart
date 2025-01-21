@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:concentric_transition/concentric_transition.dart';
 import 'package:todos/screens/homescreen.dart';
+import 'package:todos/screens/loginscreen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -115,7 +116,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void navigateToHome(BuildContext context) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => Homescreen()),
+      MaterialPageRoute(builder: (context) => LoginScreen()),
     );
   }
 
