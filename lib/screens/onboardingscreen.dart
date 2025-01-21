@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:concentric_transition/concentric_transition.dart';
 import 'package:todos/screens/homescreen.dart';
-import 'package:todos/screens/loginscreen.dart';
+import 'package:todos/screens/auth/loginscreen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -11,27 +11,27 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<PageData> pages = [
     PageData(
-      title: "Welcome",
-      description: "Discover amazing features with our app.",
-      backgroundColor: Colors.blueAccent,
-      image: Icons.explore,
+      title: "Organize Your Life",
+      description: "Keep track of your tasks and stay productive.",
+      backgroundColor: Colors.purple[400]!,
+      image: Icons.task_alt,
     ),
     PageData(
-      title: "Stay Connected",
-      description: "Connect with your friends and family instantly.",
-      backgroundColor: const Color.fromARGB(255, 246, 32, 178),
-      image: Icons.chat,
+      title: "Set Reminders",
+      description: "Never miss a deadline or forget important events.",
+      backgroundColor: Colors.purple[600]!,
+      image: Icons.alarm,
     ),
     PageData(
-      title: "Get Started",
-      description: "Let's get started with your journey.",
-      backgroundColor: Colors.blue,
-      image: Icons.rocket_launch,
+      title: "Achieve Goals",
+      description: "Break your goals into manageable tasks and track progress.",
+      backgroundColor: Colors.purple[800]!,
+      image: Icons.flag,
     ),
     PageData(
-      title: " Started",
-      description: "Let's get started with your journey.",
-      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+      title: "Get Started Now",
+      description: "Start organizing your day with ease and efficiency.",
+      backgroundColor: Colors.purple[900]!,
       image: Icons.rocket_launch,
     ),
   ];
@@ -83,7 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ? ElevatedButton(
                     onPressed: () => navigateToHome(context),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.blue, backgroundColor: Colors.white,
+                      foregroundColor: Colors.purple, backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -188,4 +188,3 @@ class PageCard extends StatelessWidget {
     );
   }
 }
-

@@ -27,7 +27,7 @@ class ApiService {
       body: jsonEncode({
         "title": title,
         "description": description,
-        "isCompleted": isCompleted,
+        "is_completed": isCompleted,
       }),
     );
 

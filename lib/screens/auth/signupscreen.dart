@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:todos/screens/homescreen.dart';
-import 'package:todos/screens/signupscreen.dart';
-class LoginScreen extends StatelessWidget {
+
+class SignupScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login"),
+        centerTitle: true,
+        title: Text("Signup"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -17,7 +20,7 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Welcome Back!",
+              "Create Account",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
@@ -38,20 +41,29 @@ class LoginScreen extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> Homescreen()));
-              },
-              child: Text("Login"),
+            TextFormField(
+              controller: confirmPasswordController,
+              decoration: InputDecoration(
+                labelText: "Confirm Password",
+                border: OutlineInputBorder(),
+              ),
+              obscureText: true,
             ),
-            TextButton(
+            SizedBox(height: 20),
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignupScreen()),
+                  MaterialPageRoute(builder: (context) => Homescreen()),
                 );
               },
-              child: Text("Don't have an account? Sign up"),
+              child: Text("Sign Up"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text("Already have an account? Login"),
             ),
           ],
         ),

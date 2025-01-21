@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:todos/constants/appcolor.dart';
 import 'package:todos/screens/homescreen.dart';
-
-class SignupScreen extends StatelessWidget {
+import 'package:todos/screens/auth/signupscreen.dart';
+class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Signup"),
+        backgroundColor: Appcolor.appbarcolor,
+        centerTitle: true,
+        title: Text("Login"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -19,7 +20,7 @@ class SignupScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Create Account",
+              "Welcome Back!",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
@@ -40,29 +41,20 @@ class SignupScreen extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 20),
-            TextFormField(
-              controller: confirmPasswordController,
-              decoration: InputDecoration(
-                labelText: "Confirm Password",
-                border: OutlineInputBorder(),
-              ),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Homescreen()),
-                );
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> Homescreen()));
               },
-              child: Text("Sign Up"),
+              child: Text("Login"),
             ),
             TextButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignupScreen()),
+                );
               },
-              child: Text("Already have an account? Login"),
+              child: Text("Don't have an account? Sign up"),
             ),
           ],
         ),
