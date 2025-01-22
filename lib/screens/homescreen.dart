@@ -145,15 +145,16 @@ class _HomescreenState extends State<Homescreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 16,
+                        height: 15,
                         width: double.infinity,
                         color: Colors.white,
                       ),
                       const SizedBox(height: 8),
-                      Container(
-                        height: 14,
+                      Container(  
+                        height: 24,
                         width: MediaQuery.of(context).size.width * 0.5,
                         color: Colors.white,
+                       
                       ),
                     ],
                   ),

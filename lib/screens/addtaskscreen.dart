@@ -18,7 +18,7 @@ class _AddtaskscreenState extends State<Addtaskscreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Add Task"),
+        title: Text("Add Task", style: TextStyle(fontWeight: FontWeight.bold),),
         backgroundColor: const Color.fromARGB(255, 195, 145, 255),
       ),
       body: Padding(
@@ -117,7 +117,8 @@ class _AddtaskscreenState extends State<Addtaskscreen> {
           } catch (error) {
             debugPrint("Error adding task: $error");
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Failed to add task')),
+              
+              SnackBar(content: Text('Failed to add task',style: TextStyle(color: Colors.red),)),
             );
           }
         },
